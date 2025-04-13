@@ -1,103 +1,63 @@
-// Toggle Menu Function
+// Toggle mobile menu
 function toggleMenu() {
-    const navLinks = document.getElementById("navLinks")
-    navLinks.classList.toggle("show")
+    const navLinks = document.getElementById('navLinks');
+    navLinks.classList.toggle('active');
 }
 
-// Slideshow Functionality
-document.addEventListener("DOMContentLoaded", () => {
-    const slides = document.querySelectorAll(".hero img")
-    let currentSlide = 0
-
-    function showSlide(index) {
-        slides.forEach((slide) => slide.classList.remove("active"))
-        slides[index].classList.add("active")
-    }
-
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length
-        showSlide(currentSlide)
-    }
-
-    // Change slide every 5 seconds
-    setInterval(nextSlide, 5000)
-
-    // Active Navigation Link
-    const sections = document.querySelectorAll("section")
-    const navLinks = document.querySelectorAll(".nav-links a")
-
-    window.addEventListener("scroll", () => {
-        let current = ""
-
-        sections.forEach((section) => {
-            const sectionTop = section.offsetTop
-            const sectionHeight = section.clientHeight
-            if (window.pageYOffset >= sectionTop - sectionHeight / 3) {
-                current = section.getAttribute("id")
-            }
-        })
-
-        navLinks.forEach((link) => {
-            link.classList.remove("active")
-            if (link.getAttribute("href").substring(1) === current) {
-                link.classList.add("active")
-            }
-        })
-    })
-
-    // Implement Lazy Loading for Images
-    const lazyImages = document.querySelectorAll("img[data-src]")
-
-    if ("IntersectionObserver" in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const img = entry.target
-                    img.src = img.dataset.src
-                    img.classList.add("loaded")
-                    imageObserver.unobserve(img)
-                }
-            })
-        })
-
-        lazyImages.forEach((img) => {
-            imageObserver.observe(img)
-        })
-    } else {
-        // Fallback for browsers that don't support IntersectionObserver
-        lazyImages.forEach((img) => {
-            img.src = img.dataset.src
-        })
-    }
-
-    // Close menu when clicking outside
-    document.addEventListener("click", (event) => {
-        const navLinks = document.getElementById("navLinks")
-        const menuToggle = document.querySelector(".menu-toggle")
-
-        const isClickInsideNav = navLinks.contains(event.target)
-        const isClickOnToggle = menuToggle.contains(event.target)
-
-        if (!isClickInsideNav && !isClickOnToggle && navLinks.classList.contains("show")) {
-            navLinks.classList.remove("show")
+// Slideshow functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Slideshow
+    const slideshowImages = document.querySelectorAll('.slideshow-container img');
+    if (slideshowImages.length > 0) {
+        let currentSlide = 0;
+        
+        function showNextSlide() {
+            slideshowImages[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slideshowImages.length;
+            slideshowImages[currentSlide].classList.add('active');
         }
-    })
-})
-
-// Function to show the contact form
-function openContactForm() {
-    document.getElementById("contactForm").style.display = "flex";
-}
-
-// Function to hide the contact form
-function closeContactForm() {
-    document.getElementById("contactForm").style.display = "none";
-}
-
-// Attach event listener to the "Contact Now" button
-document.addEventListener("DOMContentLoaded", function () {
-    const contactButton = document.querySelector(".btn");
-    if (contactButton) {
-        contactButton.addEventListener("click", openContactForm);
+        
+        // Change slide every 5 seconds
+        setInterval(showNextSlide, 5000);
+    }
+    
+    // FAQ accordion
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    if (faqQuestions.length > 0) {
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+                
+                // Update icon
+                const icon = question.querySelector('i');
+                if (faqItem.classList.contains('active')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+    }
+    
+    // Form submission
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message. We will get back to you soon!');
+            contactForm.reset();
+        });
+    }
+    
+    const appointmentForm = document.querySelector('.appointment-form');
+    if (appointmentForm) {
+        appointmentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for scheduling an appointment. We will confirm your appointment soon!');
+            appointmentForm.reset();
+        });
     }
 });
