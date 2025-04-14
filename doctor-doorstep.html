@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor on Doorstep - MediCare Hospital</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="new-sections.css">
+</head>
+
+<body>
+    <header class="header" id="home">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-hospital"></i>
+                    <span>UNI चिकित्सालय</span>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="ambulance-request.html">Ambulance Request</a></li>
+                    <li><a href="doctor-doorstep.html" class="active">Doctor on Doorstep</a></li>
+                    <li><a href="blood-donor.html">Blood Donor Finder</a></li>
+                    <li><a href="best-doctors.html">Best Doctors</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="appointment.html" class="btn appointment-btn">MAKE AN APPOINTMENT</a>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="doorstep-hero">
+        <div class="container">
+            <h1>Doctor on Doorstep</h1>
+            <p>Quality Healthcare in the Comfort of Your Home</p>
+        </div>
+    </section>
+
+    <section class="emergency-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Home Visit Healthcare</h2>
+                <p>Our experienced doctors are available for home visits when you need them most</p>
+            </div>
+
+            <div class="service-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Request a Visit</h3>
+                    <p>Fill out our simple online form or call our dedicated hotline to request a doctor's visit to your home.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Doctor Assignment</h3>
+                    <p>We'll assign a qualified doctor based on your medical needs and location.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Home Visit</h3>
+                    <p>Our doctor will arrive at your doorstep with all necessary equipment for diagnosis and treatment.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Follow-up Care</h3>
+                    <p>We provide comprehensive follow-up care including prescriptions, referrals, and future appointments.</p>
+                </div>
+            </div>
+
+            <div class="form-container">
+                <h3>Request a Home Visit</h3>
+                <form id="doorstep-form">
+                    <div class="form-group">
+                        <label for="patient-name">Patient Name</label>
+                        <input type="text" id="patient-name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-number">Contact Number</label>
+                        <input type="tel" id="contact-number" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="home-address">Home Address</label>
+                        <input type="text" id="home-address" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="preferred-date">Preferred Date</label>
+                        <input type="date" id="preferred-date" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="preferred-time">Preferred Time</label>
+                        <select id="preferred-time" class="form-control" required>
+                            <option value="">Select Time Slot</option>
+                            <option value="morning">Morning (9 AM - 12 PM)</option>
+                            <option value="afternoon">Afternoon (12 PM - 4 PM)</option>
+                            <option value="evening">Evening (4 PM - 8 PM)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="medical-concern">Medical Concern</label>
+                        <textarea id="medical-concern" class="form-control" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="specialist-type">Specialist Required (if known)</label>
+                        <select id="specialist-type" class="form-control">
+                            <option value="">Select Specialist</option>
+                            <option value="general">General Physician</option>
+                            <option value="pediatrician">Pediatrician</option>
+                            <option value="geriatrician">Geriatrician</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">Request Home Visit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4>UNI चिकित्सालय</h4>
+                    <p>Providing exceptional healthcare services for over 20 years. Our mission is to improve the health
+                        and wellbeing of the communities we serve.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="ambulance-request.html">Ambulance Request</a></li>
+                        <li><a href="doctor-doorstep.html">Doctor on Doorstep</a></li>
+                        <li><a href="blood-donor.html">Blood Donor Finder</a></li>
+                        <li><a href="best-doctors.html">Best Doctors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 UNI चिकित्सालय. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

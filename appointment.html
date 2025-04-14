@@ -4,96 +4,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospital Appointment Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+    <title>Make an Appointment - UNI चिकित्सालय</title>
 
-        .form-container {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
-        }
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
-        h2 {
-            text-align: center;
-            color: #0056B3;
-        }
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        label {
-            font-weight: bold;
-            color: #0056B3;
-        }
-
-        input,
-        select,
-        button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        button {
-            background: #0056B3;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        button:hover {
-            background: #004494;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="form-container">
-        <h2>Hospital Appointment</h2>
-        <form>
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" required>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-hospital"></i>
+                    <span>UNI चिकित्सालय</span>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="appointment.html" class="btn appointment-btn active">MAKE AN APPOINTMENT</a>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+    <section class="page-banner">
+        <div class="container">
+            <h1>Make an Appointment</h1>
+            <p>Schedule your visit with our healthcare professionals</p>
+        </div>
+    </section>
 
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" required>
+    <section class="appointment-section">
+        <div class="container">
+            <div class="columns-container">
+                <div class="column">
+                    <div class="appointment-info">
+                        <h2>Book Your Appointment</h2>
+                        <p>Please fill out the form to schedule an appointment with one of our specialists. Our team will confirm your appointment within 24 hours.</p>
+                        <div class="appointment-steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h3>Fill the Form</h3>
+                                    <p>Complete the appointment request form with your details and preferred schedule.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h3>Confirmation</h3>
+                                    <p>Receive a confirmation email or call from our staff.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h3>Visit Us</h3>
+                                    <p>Arrive 15 minutes before your scheduled appointment.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <form class="appointment-form">
+                        <div class="form-group">
+                            <label for="fullname">Full Name</label>
+                            <input type="text" id="fullname" name="fullname" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="department">Department</label>
+                            <select id="department" name="department" required>
+                                <option value="">Select Department</option>
+                                <option value="cardiology">Cardiology</option>
+                                <option value="neurology">Neurology</option>
+                                <option value="orthopedics">Orthopedics</option>
+                                <option value="pediatrics">Pediatrics</option>
+                                <option value="general">General Medicine</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Preferred Date</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Preferred Time</label>
+                                <select id="time" name="time" required>
+                                    <option value="">Select Time</option>
+                                    <option value="morning">Morning (9AM - 12PM)</option>
+                                    <option value="afternoon">Afternoon (1PM - 5PM)</option>
+                                    <option value="evening">Evening (6PM - 8PM)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="reason">Reason for Visit</label>
+                            <textarea id="reason" name="reason" rows="4" required></textarea>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="new-patient" name="new-patient">
+                            <label for="new-patient">I am a new patient</label>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">I agree to the terms and conditions</label>
+                        </div>
+                        <button type="submit" class="btn btn-full">Schedule Appointment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <label for="date">Appointment Date</label>
-            <input type="date" id="date" name="date" required>
+    <section class="insurance-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Insurance Information</h2>
+                <p>We accept most major insurance plans</p>
+            </div>
+            <div class="insurance-logos">
+                <div class="insurance-logo">
+                    <img src="https://via.placeholder.com/150x80?text=Insurance+1" alt="Insurance Provider">
+                </div>
+                <div class="insurance-logo">
+                    <img src="https://via.placeholder.com/150x80?text=Insurance+2" alt="Insurance Provider">
+                </div>
+                <div class="insurance-logo">
+                    <img src="https://via.placeholder.com/150x80?text=Insurance+3" alt="Insurance Provider">
+                </div>
+                <div class="insurance-logo">
+                    <img src="https://via.placeholder.com/150x80?text=Insurance+4" alt="Insurance Provider">
+                </div>
+                <div class="insurance-logo">
+                    <img src="https://via.placeholder.com/150x80?text=Insurance+5" alt="Insurance Provider">
+                </div>
+            </div>
+            <p class="insurance-note">If you don't see your insurance provider listed, please contact our billing department at +91 9869869895 to verify coverage.</p>
+        </div>
+    </section>
 
-            <label for="time">Appointment Time</label>
-            <input type="time" id="time" name="time" required>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4>UNI चिकित्सालय</h4>
+                    <p>Providing exceptional healthcare services for over 20 years. Our mission is to improve the health
+                        and wellbeing of the communities we serve.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 MediCare Hospital. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-            <label for="department">Department</label>
-            <select id="department" name="department" required>
-                <option value="general">General</option>
-                <option value="cardiology">Cardiology</option>
-                <option value="neurology">Neurology</option>
-                <option value="orthopedics">Orthopedics</option>
-            </select>
-
-            <label for="doctor">Doctor</label>
-            <input type="text" id="doctor" name="doctor" placeholder="Doctor's Name (optional)">
-
-            <button type="submit">Book Appointment</button>
-        </form>
-    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>

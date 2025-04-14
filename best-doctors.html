@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Doctors - MediCare Hospital</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="new-sections.css">
+</head>
+
+<body>
+    <header class="header" id="home">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-hospital"></i>
+                    <span>UNI चिकित्सालय</span>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="ambulance-request.html">Ambulance Request</a></li>
+                    <li><a href="doctor-doorstep.html">Doctor on Doorstep</a></li>
+                    <li><a href="blood-donor.html">Blood Donor Finder</a></li>
+                    <li><a href="best-doctors.html" class="active">Best Doctors</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="appointment.html" class="btn appointment-btn">MAKE AN APPOINTMENT</a>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="doctors-hero">
+        <div class="container">
+            <h1>Our Best Doctors</h1>
+            <p>Meet Our Team of Highly Qualified Medical Professionals</p>
+        </div>
+    </section>
+
+    <section class="emergency-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Expert Medical Team</h2>
+                <p>Our doctors are leaders in their respective fields with years of experience</p>
+            </div>
+
+            <div class="doctors-grid">
+                <div class="doctor-card">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZG9jdG9yfGVufDB8fDB8fHww" alt="Dr. James Wilson" class="doctor-img">
+                    <div class="doctor-info">
+                        <h3>Dr. Sanjay Murti</h3>
+                        <div class="doctor-specialty">Cardiologist</div>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="doctor-bio">Dr. Sanjay Murti is a board-certified cardiologist with over 15 years of experience in treating complex cardiac conditions.</p>
+                        <div class="doctor-contact">
+                            <a href="#" class="btn btn-primary">Book Appointment</a>
+                            <a href="#" class="btn btn-secondary">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="doctor-card">
+                    <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D" alt="Dr. Emily Chen" class="doctor-img">
+                    <div class="doctor-info">
+                        <h3>Dr. Neha</h3>
+                        <div class="doctor-specialty">Neurologist</div>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="doctor-bio">Dr. Neha specializes in neurological disorders and has pioneered several innovative treatment approaches.</p>
+                        <div class="doctor-contact">
+                            <a href="#" class="btn btn-primary">Book Appointment</a>
+                            <a href="#" class="btn btn-secondary">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="doctor-card">
+                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGRvY3RvcnN8ZW58MHx8MHx8fDA%3D" alt="Dr. Michael Rodriguez" class="doctor-img">
+                    <div class="doctor-info">
+                        <h3>Dr. Raunak</h3>
+                        <div class="doctor-specialty">Orthopedic Surgeon</div>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="doctor-bio">Dr. Raunak is renowned for his expertise in joint replacement surgeries and sports medicine.</p>
+                        <div class="doctor-contact">
+                            <a href="#" class="btn btn-primary">Book Appointment</a>
+                            <a href="#" class="btn btn-secondary">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="doctor-card">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9jdG9yfGVufDB8fDB8fHww" alt="Dr. Sarah Johnson" class="doctor-img">
+                    <div class="doctor-info">
+                        <h3>Dr. Shaifali</h3>
+                        <div class="doctor-specialty">Pediatrician</div>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="doctor-bio">Dr. Shaifali has dedicated her career to providing compassionate care for children of all ages.</p>
+                        <div class="doctor-contact">
+                            <a href="#" class="btn btn-primary">Book Appointment</a>
+                            <a href="#" class="btn btn-secondary">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="doctor-card">
+                    <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D" alt="Dr. Robert Thompson" class="doctor-img">
+                    <div class="doctor-info">
+                        <h3>Dr. Robin</h3>
+                        <div class="doctor-specialty">Oncologist</div>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="doctor-bio">Dr. Robin is at the forefront of cancer research and treatment, offering hope to patients with complex cases.</p>
+                        <div class="doctor-contact">
+                            <a href="#" class="btn btn-primary">Book Appointment</a>
+                            <a href="#" class="btn btn-secondary">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="doctor-card">
+                    <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D" alt="Dr. Lisa Patel" class="doctor-img">
+                    <div class="doctor-info">
+                        <h3>Dr. Sophiya</h3>
+                        <div class="doctor-specialty">Dermatologist</div>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="doctor-bio">Dr. Sophiya combines medical and cosmetic dermatology to provide comprehensive skin care solutions.</p>
+                        <div class="doctor-contact">
+                            <a href="#" class="btn btn-primary">Book Appointment</a>
+                            <a href="#" class="btn btn-secondary">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4>UNI चिकित्सालय</h4>
+                    <p>Providing exceptional healthcare services for over 20 years. Our mission is to improve the health
+                        and wellbeing of the communities we serve.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="ambulance-request.html">Ambulance Request</a></li>
+                        <li><a href="doctor-doorstep.html">Doctor on Doorstep</a></li>
+                        <li><a href="blood-donor.html">Blood Donor Finder</a></li>
+                        <li><a href="best-doctors.html">Best Doctors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 UNI चिकित्सालय. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
